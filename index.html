@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download The 901 Operational Systems Playbook | 901 Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 193, 7, 0.1);
+            transform: rotate(45deg);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h3 {
+            color: #FFC107;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-card h2 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .form-card p {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FFC107;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            background: #FFC107;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: #FFD54F;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .privacy-note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-message h3 {
+            color: #4CAF50;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 3px solid #FFC107;
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2);
+        }
+
+        .feature-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #FFC107;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .cta-center {
+            text-align: center;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #FFC107;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px;
+        }
+
+        .btn-download:hover {
+            background: #FFD54F;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-calculator {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: #1a1a1a;
+            border: 3px solid #FFC107;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px;
+        }
+
+        .btn-calculator:hover {
+            background: #FFC107;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Why Section */
+        .why-section {
+            background: #FFC107;
+            padding: 80px 20px;
+        }
+
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        .why-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1a1a1a;
+            max-width: 900px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .final-cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .playbook-preview {
+            text-align: center;
+        }
+
+        .playbook-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .playbook-preview h3 {
+            font-size: 28px;
+            margin-top: 20px;
+            color: #1a1a1a;
+        }
+
+        .playbook-preview p {
+            color: #666;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .final-cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        .final-cta-content ul {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .final-cta-content li {
+            font-size: 18px;
+            padding: 15px 0;
+            color: #333;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .final-cta-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFC107;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container,
+            .final-cta-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .form-card {
+                padding: 30px 20px;
+            }
+
+            .btn-download,
+            .btn-calculator {
+                display: block;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Form -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h3>Download Our Free Playbook</h3>
+                <h1>Master the 7 Systems That Drive Operational Excellence</h1>
+                <p>Discover how to transform third-party car rental operations from reactive chaos to resilient systems. This comprehensive playbook reveals the proven framework for aligning People, Process, and Performance across seven critical operational systems.</p>
+            </div>
+
+            <div class="form-card">
+                <div id="leadForm">
+                    <h2>Get Your Free Playbook Today</h2>
+                    <p>Your complete guide to operational excellence in the car rental industry.</p>
+                    
+                    <form id="playbookForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Work Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">Your Role *</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role...</option>
+                                <option value="third-party-vendor">Third-Party Vendor Manager</option>
+                                <option value="corporate-site">Corporate Site Manager</option>
+                                <option value="independent-operator">Independent Operator</option>
+                                <option value="fleet-distribution">Fleet Distribution Manager</option>
+                                <option value="wholesale-lot">Wholesale Lot Manager</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Download The 901 Playbook</button>
+
+                        <p class="privacy-note">We respect your privacy. Your information will never be shared.</p>
+                    </form>
+                </div>
+
+                <div id="successMessage" class="success-message">
+                    <h3>✓ Success!</h3>
+                    <p>Your playbook is downloading now.<br>Check your downloads folder.</p>
+                    <p style="margin-top: 20px; font-size: 14px;">We'll send you additional resources via email soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Transform Operations Into a Competitive Advantage</h2>
+            <p class="features-subtitle">This playbook reveals the seven interconnected systems that turn compliance, culture, and performance into a seamless operational rhythm.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <h3>Workforce Management</h3>
+                    <p>Build a stable, skilled team through structured onboarding, real-time coaching, and clear career pathways that cut turnover and boost accountability.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <h3>Dispatch & Scheduling</h3>
+                    <p>Optimize vehicle flow and driver assignments with intelligent routing, demand forecasting, and real-time coordination that eliminates bottlenecks.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <h3>Safety & Compliance</h3>
+                    <p>Embed regulatory requirements directly into daily workflows so the right actions happen automatically, without extra effort or oversight.</p>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <a href="#leadForm" class="btn-download">Download The Playbook</a>
+                <a href="https://kosaddiq-cpu.github.io/kosaddiq-cpu-Calculator/" target="_blank" class="btn-calculator">Take The Health Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="why-container">
+            <h2>Why Choose 901 Consulting?</h2>
+            <p>With years spent inside the car rental ecosystem—from corporate operations to on-the-ground fleet management—we've seen what makes third-party systems break and what makes them thrive. 901 Consulting was built to help vendors, managers, and operators replace firefighting with foresight through structured, human-centered systems that work under pressure.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-container">
+            <div class="playbook-preview">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect fill='%23FFC107' width='300' height='400'/%3E%3Ctext x='50%25' y='30%25' font-family='Arial' font-size='24' font-weight='bold' fill='%231a1a1a' text-anchor='middle'%3EThe 901%3C/text%3E%3Ctext x='50%25' y='40%25' font-family='Arial' font-size='20' font-weight='bold' fill='%231a1a1a' text-anchor='middle'%3EOperational%3C/text%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='20' font-weight='bold' fill='%231a1a1a' text-anchor='middle'%3ESystems%3C/text%3E%3Ctext x='50%25' y='60%25' font-family='Arial' font-size='20' font-weight='bold' fill='%231a1a1a' text-anchor='middle'%3EPlaybook%3C/text%3E%3Ctext x='50%25' y='75%25' font-family='Arial' font-size='12' fill='%231a1a1a' text-anchor='middle'%3E7 Systems for%3C/text%3E%3Ctext x='50%25' y='80%25' font-family='Arial' font-size='12' fill='%231a1a1a' text-anchor='middle'%3EOperational Excellence%3C/text%3E%3C/svg%3E" alt="The 901 Operational Systems Playbook">
+                <h3>The 901 Strategy Playbook</h3>
+                <p>A comprehensive system for optimizing fleet performance and driving strategic advantage.</p>
+            </div>
+
+            <div class="final-cta-content">
+                <h2>Ready to Lead the Next Era of Fleet Operations?</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; color: #666;">Download your free playbook today and learn how to:</p>
+                
+                <ul>
+                    <li>Strengthen vendor partnerships with measurable accountability</li>
+                    <li>Turn compliance into confidence and control</li>
+                    <li>Build teams that stay steady no matter how fast things change</li>
+                    <li>Optimize dispatch and scheduling for maximum efficiency</li>
+                    <li>Implement data-driven performance tracking systems</li>
+                    <li>Create sustainable competitive advantages in your market</li>
+                </ul>
+
+                <div class="cta-center">
+                    <a href="#leadForm" class="btn-download">Download The 901 Playbook</a>
+                    <a href="https://kosaddiq-cpu.github.io/kosaddiq-cpu-Calculator/" target="_blank" class="btn-calculator">Take The Health Assessment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Lead capture and PDF download
+        document.getElementById('playbookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const leadData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                role: document.getElementById('role').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Store lead in localStorage (for testing - replace with backend API in production)
+            let leads = JSON.parse(localStorage.getItem('playbook-leads') || '[]');
+            leads.push(leadData);
+            localStorage.setItem('playbook-leads', JSON.stringify(leads));
+
+            // Show success message
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+
+            // Trigger PDF download
+            const link = document.createElement('a');
+            link.href = '901-operational-systems-playbook-final.pdf';
+            link.download = '901-operational-systems-playbook.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Optional: Send to backend API
+            // fetch('/api/leads', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(leadData)
+            // });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
